@@ -337,6 +337,7 @@ This ID is used in the Jenkins pipeline script for DockerHub authentication.
  Two YAML files were used for deploying the Docker container on the Kubernetes cluster.
 
 deploy.yml
+
          apiVersion: apps/v1
          kind: Deployment
          metadata:
@@ -359,6 +360,7 @@ deploy.yml
 
 
    svc.yml
+   
           apiVersion: v1
           kind: Service
           metadata:
@@ -375,14 +377,20 @@ deploy.yml
 
   These files create a deployment and NodePort service which expose the application on port 30007.
 
-Step 18: Verify the Deployment
-Commands Used:
-        kubectl get pods
-        kubectl get svc
-You should see the pod running and the service exposing port 30007.
-Access the application using:
-         http://<NodePublicIP>:30007
-The application successfully ran inside a Kubernetes pod, deployed through Jenkins pipeline automation.
+# Step 18: Verify the Deployment
+
+  Commands Used:
+  
+              kubectl get pods
+              kubectl get svc
+        
+  You should see the pod running and the service exposing port 30007.
+  
+  Access the application using:
+  
+              http://<NodePublicIP>:30007
+         
+  The application successfully ran inside a Kubernetes pod, deployed through Jenkins pipeline automation.
 
 
 
